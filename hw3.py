@@ -42,11 +42,11 @@ try:
         print(str(ch))
         i+=1
         print("data"+str(i))
-        if ch.supportsRead():
-            print(ch.read())
-        # if ch.supportsWrite():
-        else:
-            ch.write("fuck uuuuuuuuuu".encode("utf-8"))
+        # if ch.supportsRead():
+        #     print(ch.read())
+        # # if ch.supportsWrite():
+        # else:
+        ch.write("fuck uuuuuuuuuu".encode("utf-8"))
 
     i=0
     for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
