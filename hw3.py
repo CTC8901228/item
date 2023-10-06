@@ -46,17 +46,17 @@ try:
         #     print(ch.read())
         # # if ch.supportsWrite():
         # else:
-        ch.write("fuck uuuuuuuuuu".encode("utf-8"))
+        ch.write("fuck!!!!!!!!!!".encode("utf-8"))
 
     i=0
     for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
         i+=1
         print("data"+str(i))
-        if ch.supportsRead():
-            print(ch.read())
-        # if ch.supportsWrite():
-        else:
-            ch.write("fuck uuuuuuuuuu".encode("utf-8"))
+        # if ch.supportsRead():
+        #     print(ch.read())
+        # # if ch.supportsWrite():
+        # else:
+        ch.write("fuck bbbbbb".encode("utf-8"))
 
 finally:
     dev.disconnect()
