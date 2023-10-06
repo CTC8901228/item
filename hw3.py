@@ -44,6 +44,8 @@ try:
 
         if ch.supportsRead():
             print(ch.read())
+        if ch.supportsWrite():
+            ch.write("fuck uuuuuuuuuu".encode("utf-8"))
 
 finally:
     dev.disconnect()
