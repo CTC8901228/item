@@ -40,8 +40,10 @@ try:
     testService = dev.getServiceByUUID(UUID(0xfff0))
     for ch in testService.getCharacteristics():
         print(str(ch))
+    i=0
     for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
-
+        i+=1
+        print("data"+str(i))
         if ch.supportsRead():
             print(ch.read())
         # if ch.supportsWrite():
