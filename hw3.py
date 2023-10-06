@@ -40,10 +40,10 @@ try:
     testService = dev.getServiceByUUID(UUID(0xfff0))
     for ch in testService.getCharacteristics():
         print(str(ch))
+    for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
 
-    ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
-    if ch.supportsRead():
-        print(ch.read())
+        if ch.supportsRead():
+            print(ch.read())
 
 finally:
     dev.disconnect()
