@@ -24,7 +24,7 @@ for dev in devices:
 
     for (adtype, desc, value) in dev.getScanData():
         print(" %s = %s" % (desc, value))
-        if(value=='r119')
+        if(value=='r119'):
             number=n
 # number = input('Enter your device number: ')
 # print('Device', number)
