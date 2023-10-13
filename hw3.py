@@ -16,7 +16,7 @@ scanner = Scanner().withDelegate(ScanDelegate())
 devices = scanner.scan(10.0)
 n = 0
 addr = []
-
+num=-1
 for dev in devices:
     print("%d: Device %s (%s), RSSI=%d dB" % (n, dev.addr, dev.addrType, dev.rssi))
     addr.append(dev.addr)
@@ -26,6 +26,11 @@ for dev in devices:
         print(" %s = %s" % (desc, value))
         if(value=='r119'):
             num=n
+            break
+
+if(num==-1): 
+    print('no connection')
+    
 # number = input('Enter your device number: ')
 # print('Device', number)
 # num = int(number)
