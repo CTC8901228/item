@@ -96,3 +96,10 @@ try:
             print ("Waiting...")
 finally:
     dev.disconnect()
+class MyDelegate(btle.DefaultDelegate):
+    def __init__(self):
+        btle.DefaultDelegate.__init__(self)
+
+    def handleNotification(self, cHandle, data):
+        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
+
