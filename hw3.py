@@ -25,7 +25,7 @@ for dev in devices:
     for (adtype, desc, value) in dev.getScanData():
         print(" %s = %s" % (desc, value))
         if(value=='r11921009' and desc=='Complete Local Name'):
-            num=n
+            num=n-1
             break
     if (num!=-1):
         break
