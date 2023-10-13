@@ -93,6 +93,6 @@ try:
             print('notify!!')
             # continue
     
-            print "Waiting..."
+            print ("Waiting...")
 finally:
     dev.disconnect()
