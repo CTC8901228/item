@@ -24,21 +24,21 @@ for dev in devices:
 
     for (adtype, desc, value) in dev.getScanData():
         print(" %s = %s" % (desc, value))
-
-number = input('Enter your device number: ')
-print('Device', number)
-num = int(number)
+        if(value=='r119')
+            number=n
+# number = input('Enter your device number: ')
+# print('Device', number)
+# num = int(number)
 print(addr[num])
 print("Connecting...")
 dev = Peripheral(addr[num], 'random')
 print("Services...")
-print(dev)
-print(dev)
-for i in dev.getDescriptors(startHnd=1, endHnd=0xFFFF):
-    print(i)
 
-print(dev)
-print(dev)
+for i in dev.getDescriptors(startHnd=0x2902, endHnd=0x2902):
+    print(i)
+    print(dir(i))
+
+
 print(dev)
 for svc in dev.services:
     print(str(svc))
