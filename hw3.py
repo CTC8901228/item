@@ -87,6 +87,8 @@ try:
         # # if ch.supportsWrite():
         # else:
         ch.write("666666666666666".encode("utf-8"))
+        dev.setDelegate( MyDelegate() )
+
     while True:
         if dev.waitForNotifications(1.0):
             # handleNotification() was called
