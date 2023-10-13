@@ -28,8 +28,7 @@ for dev in devices:
             num=n
             break
 
-if(num==-1): 
-    print('no connection')
+assert(num!=-1)
     
 # number = input('Enter your device number: ')
 # print('Device', number)
