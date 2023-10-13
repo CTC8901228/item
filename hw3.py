@@ -41,8 +41,8 @@ print("Services...")
 
 for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
 
-    print(i.handle)
-    if(i.handle=='0x2902'):
+    print(i.uuid)
+    if(i.uuid==0x2902):
         i.write(0x1000)
         
 
