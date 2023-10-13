@@ -44,7 +44,7 @@ for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
     print(i.uuid)
     if(i.uuid==0x2902):
         w=1
-        i.write(w.to_bytes(1))
+        i.write(w.to_bytes(1,'little'))
         print('write!!!!')
         
 
