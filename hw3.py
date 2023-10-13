@@ -27,7 +27,8 @@ for dev in devices:
         if(value=='r11921009' and desc=='Complete Local Name'):
             num=n
             break
-    if (num!=-1) break
+    if (num!=-1):
+        break
 assert(num!=-1)
     
 # number = input('Enter your device number: ')
