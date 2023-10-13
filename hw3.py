@@ -34,6 +34,9 @@ dev = Peripheral(addr[num], 'random')
 print("Services...")
 print(dev)
 print(dev)
+for i in dev.getDescriptors(startHnd=1, endHnd=0xFFFF):
+    print(i)
+
 print(dev)
 print(dev)
 print(dev)
