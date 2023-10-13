@@ -35,16 +35,12 @@ dev = Peripheral(addr[num], 'random')
 print("Services...")
 
 for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
-    try:
-        print(i.uuid)
-        print('data')
-    except:
-        pass    
-    try:
-        print(i.uuid())
-        print('meth')
-    except:
-        pass
+
+    print(i.uuid)
+    if(i.uuid[:8]=='00002902'):
+        i.write('1000')
+        
+
     # print(dir(i))
 
 
