@@ -43,7 +43,7 @@ for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
 
     print(i.uuid)
     if(i.handle=='0x2902'):
-        i.write('1000')
+        i.write('0x1000')
         
 
     # print(dir(i))
