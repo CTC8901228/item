@@ -7,7 +7,7 @@ class MyDelegate(btle.DefaultDelegate):
         btle.DefaultDelegate.__init__(self)
 
     def handleNotification(self, cHandle, data):
-        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
+        print ("Notification received: handle =", cHandle, "; Raw data =", data)
 
 
 class ScanDelegate(DefaultDelegate):
