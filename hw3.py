@@ -34,7 +34,7 @@ print("Connecting...")
 dev = Peripheral(addr[num], 'random')
 print("Services...")
 
-for i in dev.getDescriptors(startHnd=0x2902, endHnd=0x2902):
+for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
     print(i)
     print(dir(i))
 
