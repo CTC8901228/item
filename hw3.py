@@ -32,22 +32,26 @@ print(addr[num])
 print("Connecting...")
 dev = Peripheral(addr[num], 'random')
 print("Services...")
-
+print(dev)
+print(dev)
+print(dev)
+print(dev)
+print(dev)
 for svc in dev.services:
     print(str(svc))
 i=0
+# try:
+#     testService = dev.getServiceByUUID(UUID(0xfff0))
+#     for ch in testService.getCharacteristics():
+#         print(str(ch))
+#         i+=1
+#         print("data"+str(i))
+#         # if ch.supportsRead():
+#         #     print(ch.read())
+#         # # if ch.supportsWrite():
+#         # else:
+#         ch.write("fuck!!!!!!!!!!".encode("utf-8"))
 try:
-    testService = dev.getServiceByUUID(UUID(0xfff0))
-    for ch in testService.getCharacteristics():
-        print(str(ch))
-        i+=1
-        print("data"+str(i))
-        # if ch.supportsRead():
-        #     print(ch.read())
-        # # if ch.supportsWrite():
-        # else:
-        ch.write("fuck!!!!!!!!!!".encode("utf-8"))
-
     i=0
     for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
         i+=1
@@ -56,7 +60,15 @@ try:
         #     print(ch.read())
         # # if ch.supportsWrite():
         # else:
-        ch.write("fuck bbbbbb".encode("utf-8"))
+        ch.write("666666666666666".encode("utf-8"))
+    for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
+        i+=1
+        print("data"+str(i))
+        # if ch.supportsRead():
+        #     print(ch.read())
+        # # if ch.supportsWrite():
+        # else:
+        ch.write("666666666666666".encode("utf-8"))
 
 finally:
     dev.disconnect()
