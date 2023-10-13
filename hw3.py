@@ -87,12 +87,12 @@ try:
         # # if ch.supportsWrite():
         # else:
         ch.write("666666666666666".encode("utf-8"))
-while True:
-    if dev.waitForNotifications(1.0):
-        # handleNotification() was called
-        print('notify!!')
-        # continue
-
-        print "Waiting..."
+    while True:
+        if dev.waitForNotifications(1.0):
+            # handleNotification() was called
+            print('notify!!')
+            # continue
+    
+            print "Waiting..."
 finally:
     dev.disconnect()
