@@ -2,6 +2,14 @@
 from bluepy.btle import Peripheral, UUID
 from bluepy.btle import Scanner, DefaultDelegate
 from bluepy import btle
+class MyDelegate(btle.DefaultDelegate):
+    def __init__(self):
+        btle.DefaultDelegate.__init__(self)
+
+    def handleNotification(self, cHandle, data):
+        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
+
+
 class ScanDelegate(DefaultDelegate):
     def __init__(self):
         DefaultDelegate.__init__(self)
@@ -98,10 +106,3 @@ try:
             print ("Waiting...")
 finally:
     dev.disconnect()
-class MyDelegate(btle.DefaultDelegate):
-    def __init__(self):
-        btle.DefaultDelegate.__init__(self)
-
-    def handleNotification(self, cHandle, data):
-        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
-
