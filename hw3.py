@@ -104,5 +104,5 @@ while True:
         # continue
 
         print ("Waiting...")
-finally:
-    dev.disconnect()
+# finally:
+#     dev.disconnect()
