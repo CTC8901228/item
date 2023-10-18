@@ -47,25 +47,25 @@ print("Connecting...")
 dev = Peripheral(addr[num], 'random')
 print("Services...")
 
-for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
+# for i in dev.getDescriptors(startHnd=1, endHnd=0x2909):
 
-    print(i.uuid)
-    if(i.uuid==0x2902):
-        w=2
-        print(i.read())
+#     print(i.uuid)
+#     if(i.uuid==0x2902):
+#         w=2
+#         print(i.read())
         
-        i.write(w.to_bytes(1,'little'))
-        print(i.read())
-        print('write!!!!')
+#         i.write(w.to_bytes(1,'little'))
+#         print(i.read())
+#         print('write!!!!')
         
 
-    # print(dir(i))
+#     # print(dir(i))
 
 
-print(dev)
-for svc in dev.services:
-    print(str(svc))
-i=0
+# print(dev)
+# for svc in dev.services:
+#     print(str(svc))
+# i=0
 # try:
 #     testService = dev.getServiceByUUID(UUID(0xfff0))
 #     for ch in testService.getCharacteristics():
@@ -87,15 +87,15 @@ try:
     #     # # if ch.supportsWrite():
     #     # else:
     #     ch.write("666666666666666".encode("utf-8"))
-    for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
-        i+=1
-        print("data"+str(i))
-        # if ch.supportsRead():
-        #     print(ch.read())
-        # # if ch.supportsWrite():
-        # else:
-        ch.write("666666666666666".encode("utf-8"))
-        dev.setDelegate( MyDelegate() )
+    # for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
+    #     i+=1
+    #     print("data"+str(i))
+    #     # if ch.supportsRead():
+    #     #     print(ch.read())
+    #     # # if ch.supportsWrite():
+    #     # else:
+    #     ch.write("666666666666666".encode("utf-8"))
+    dev.setDelegate( MyDelegate() )
 
     while True:
         if dev.waitForNotifications(1.0):
