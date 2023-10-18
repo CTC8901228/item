@@ -77,8 +77,8 @@ print("Services...")
 #         # # if ch.supportsWrite():
 #         # else:
 #         ch.write("fuck!!!!!!!!!!".encode("utf-8"))
-try:
-    i=0
+# try:
+#     i=0
     # for ch in dev.getCharacteristics(uuid=UUID(0xfff4)):
     #     i+=1
     #     print("data"+str(i))
@@ -95,14 +95,14 @@ try:
     #     # # if ch.supportsWrite():
     #     # else:
     #     ch.write("666666666666666".encode("utf-8"))
-    dev.setDelegate( MyDelegate() )
+dev.setDelegate( MyDelegate() )
 
-    while True:
-        if dev.waitForNotifications(1.0):
-            # handleNotification() was called
-            print('notify!!')
-            # continue
-    
-            print ("Waiting...")
+while True:
+    if dev.waitForNotifications(1.0):
+        # handleNotification() was called
+        print('notify!!')
+        # continue
+
+        print ("Waiting...")
 finally:
     dev.disconnect()
