@@ -88,18 +88,20 @@ print("Services...")
     #     # else:
     #     ch.write("666666666666666".encode("utf-8"))
 i=0
-for ch in dev.getCharacteristics():
-    i+=1
-    print("data"+str(i))
-    if ch.supportsRead():
-        print(ch.read())
+
+
+while True:
+    for ch in dev.getCharacteristics():
+        i+=1
+        print("data"+str(i))
+        if ch.supportsRead():
+            print(ch.read())
     #     # # if ch.supportsWrite():
     #     # else:
     #     ch.write("666666666666666".encode("utf-8"))
-dev.setDelegate( MyDelegate() )
-
-while True:
+        dev.setDelegate( MyDelegate() )
     if dev.waitForNotifications(1.0):
+        
         # handleNotification() was called
         print('notify!!')
         # continue
