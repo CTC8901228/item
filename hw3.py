@@ -87,8 +87,9 @@ print("Services...")
     #     # # if ch.supportsWrite():
     #     # else:
     #     ch.write("666666666666666".encode("utf-8"))
+i=0
 for ch in dev.getCharacteristics():
-    # i+=1
+    i+=1
     print("data"+str(i))
     if ch.supportsRead():
         print(ch.read())
