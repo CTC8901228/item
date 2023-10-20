@@ -92,9 +92,10 @@ i=0
 
 while True:
     for ch in dev.getCharacteristics():
-        i+=1
-        print("data"+str(i))
+        # i+=1
+        # print("data"+str(i))
         if ch.supportsRead():
+            print(ch.uuid)
             print(ch.read())
     #     # # if ch.supportsWrite():
     #     # else:
