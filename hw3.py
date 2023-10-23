@@ -13,8 +13,7 @@ class MyDelegate(btle.DefaultDelegate):
         #m16=lambda data:data & 0xffff
         print((data))
         data0,data1,data2=struct.unpack('<3h',data)
-        print(data0,' ',data1,' ',data2,' ') 
-        print ("Notification received: handle =", cHandle, "; Raw data =", int.from_bytes(data,'little',signed=True))
+        print ("Notification received: handle =", cHandle, "; Raw data =", data0,' ',data1,' ',data2,' ')
       
     #  print(type(data))
 
